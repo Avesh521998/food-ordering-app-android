@@ -157,7 +157,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview1"
                 android:layout_width="match_parent"
@@ -215,39 +214,22 @@
                         android:id="@+id/btnTomatosauceaddpizza"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-
                         android:layout_marginTop="16dp"
-                        android:layout_marginEnd="100dp"
-                        android:layout_marginRight="100dp"
+                        android:layout_marginEnd="85dp"
+                        android:layout_marginRight="85dp"
+                        android:background="@drawable/buttonstyle"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="+"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="10dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/pizzaone"
-                        app:layout_constraintTop_toBottomOf="@+id/txtpizzaprice1" />
-
-
-                    <Button
-                        android:id="@+id/btnTomatosauceremovepizza"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-
-                        android:layout_marginStart="100dp"
-                        android:layout_marginLeft="100dp"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/roboto_bold"
+                        android:onClick="countDE"
                         android:text="-"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="10dp"
+                        android:textSize="15dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/pizzaone"
                         app:layout_constraintTop_toBottomOf="@+id/txtpizzaprice1" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/pizza1counter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
@@ -255,9 +237,28 @@
                         android:layout_marginTop="23dp"
                         android:layout_marginEnd="7dp"
                         android:layout_marginRight="7dp"
-                        android:text="TextView"
+                        android:text="0"
                         app:layout_constraintEnd_toStartOf="@+id/btnTomatosauceremovepizza"
                         app:layout_constraintStart_toEndOf="@+id/btnTomatosauceaddpizza"
+                        app:layout_constraintTop_toBottomOf="@+id/txtpizzaprice1" />
+
+
+                    <Button
+                        android:id="@+id/btnTomatosauceremovepizza"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="85dp"
+                        android:layout_marginLeft="85dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/buttonstyle"
+                        android:fontFamily="@font/roboto_bold"
+                        android:onClick="countIN"
+                        android:text="+"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/pizzaone"
                         app:layout_constraintTop_toBottomOf="@+id/txtpizzaprice1" />
 
 
