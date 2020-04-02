@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -31,22 +32,6 @@
         app:layout_constraintTop_toTopOf="@+id/header" />
 
     <ImageView
-        android:id="@+id/navigation"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintEnd_toStartOf="@+id/txtmenutitle"
-        app:layout_constraintStart_toEndOf="@+id/header"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtmenutitle"
-        app:srcCompat="@drawable/ic_navigation" />
-
-    <ImageView
         android:id="@+id/notification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,10 +46,25 @@
         app:layout_constraintTop_toTopOf="@+id/txtmenutitle"
         app:srcCompat="@drawable/ic_notification" />
 
+    <Button
+        android:id="@+id/navigationbtn"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/ic_navigation"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintVertical_bias="0.593" />
+
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="@+id/header"
         app:layout_constraintEnd_toEndOf="parent"
@@ -212,51 +212,15 @@
 
                     <Button
                         android:id="@+id/btnTomatosauceaddpizza"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="85dp"
-                        android:layout_marginRight="85dp"
+                        android:layout_width="96dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="14dp"
                         android:background="@drawable/buttonstyle"
                         android:fontFamily="@font/roboto_bold"
-                        android:onClick="countDE"
-                        android:text="-"
+                        android:text="ADD"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="15dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/pizzaone"
-                        app:layout_constraintTop_toBottomOf="@+id/txtpizzaprice1" />
-
-                    <TextView
-                        android:id="@+id/pizza1counter"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginTop="23dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_marginRight="7dp"
-                        android:text="0"
-                        app:layout_constraintEnd_toStartOf="@+id/btnTomatosauceremovepizza"
-                        app:layout_constraintStart_toEndOf="@+id/btnTomatosauceaddpizza"
-                        app:layout_constraintTop_toBottomOf="@+id/txtpizzaprice1" />
-
-
-                    <Button
-                        android:id="@+id/btnTomatosauceremovepizza"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="85dp"
-                        android:layout_marginLeft="85dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@drawable/buttonstyle"
-                        android:fontFamily="@font/roboto_bold"
-                        android:onClick="countIN"
-                        android:text="+"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="25dp"
+                        android:textSize="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/pizzaone"
                         app:layout_constraintTop_toBottomOf="@+id/txtpizzaprice1" />
@@ -474,4 +438,5 @@
 
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

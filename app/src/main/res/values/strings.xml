@@ -16,5 +16,13 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_navigation">navigation</string>
 
+    <string name="home_second">Home Second</string>
+    <string name="aboutus">We are committed to nurturing a neutral platform and are helping food establishments maintain high standards through Hyperpure. Food Hygiene Ratings is a coveted mark of quality among our restaurant partners.
+</string>
+    <string name="aboutus2">We push ourselves beyond our abilities when faced with tough times. When we foresee uncertainty, we address it only with flexibility.</string>
+    <string name="aboutus3">There guidelines includeing best qulity food are provide </string>
+    <string name="aboutus4">Email : aveshbodila@gmail.com </string>
+    <string name="aboutus5">Phone : 8485966319 </string>
 </resources>

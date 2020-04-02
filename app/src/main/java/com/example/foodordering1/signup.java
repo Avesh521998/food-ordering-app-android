@@ -31,8 +31,7 @@ Button btn ;
     EditText txtEmail;
     EditText txtPassWord;
     ImageView imageView;
-    VideoView videoView;
-FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
 //FirebaseFirestore store;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,11 +72,11 @@ FirebaseAuth mAuth;
 //                        });
 
                         progressBar.setVisibility(View.GONE);
-                        Toast.makeText(signup.this, "successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(signup.this, " sign up successful", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(signup.this, login.class);
                         startActivity(i);
                     }else{
-                        Toast.makeText(signup.this, "fail", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(signup.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

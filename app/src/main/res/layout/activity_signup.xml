@@ -25,17 +25,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="Sign Up"
             android:textSize="25dp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imggif"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/copy" />
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/icons88" />
 
         <EditText
             android:id="@+id/txtUserName"
@@ -52,42 +53,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="25dp"
             android:background="@drawable/edittextstyle"
             android:ems="15"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:singleLine="true"></EditText>
-
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
         <EditText
             android:id="@+id/txtPassWord"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/edittextstyle"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
             android:singleLine="true" />
-
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/btn_sign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/buttonstyle"
             android:text="Sign Up"
             android:textColor="@color/white" />
 
+
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
-            android:layout_width="match_parent"
+            android:background="@drawable/progressbar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal" />
-
     </LinearLayout>
 
     </LinearLayout>

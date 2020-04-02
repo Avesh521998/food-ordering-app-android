@@ -1,35 +1,42 @@
 package com.example.foodordering1;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ToggleButton;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class Menupage extends AppCompatActivity {
+
     Button btn;
-    TextView pizzatextView1;
-    int counter = 0;
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pizzatextView1 = (TextView) findViewById(R.id.pizza1counter);
-    }
-    public void countIN(View View)
-    {
-        counter++;
-        pizzatextView1.setText(Integer.toString(counter));
-    }
-    public void countDE(View View)
-    {
-        counter--;
-        pizzatextView1.setText(Integer.toString(counter));
-    }
-    public void resetcount(View View)
-    {
-        counter=0;
-        pizzatextView1.setText(Integer.toString(counter));
+        setContentView(R.layout.activity_menupage);
+        btn = (Button)findViewById(R.id.btnpasta);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                                    Intent i = new Intent(Menupage.this, pasta.class);
+                                    startActivity(i);
+                            }
+                        });
     }
 }
+

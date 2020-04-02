@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pasta"></activity>
+        <activity android:name=".help"></activity>
+        <activity android:name=".feedback" />
+        <activity android:name=".Aboutus" />
+        <activity android:name=".recoverpassword" />
+        <activity android:name=".Main_navigation" />
+        <activity
+            android:name=".navigation"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".pasta" />
         <activity android:name=".activity_splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +29,7 @@
         <activity android:name=".Menupage" />
         <activity android:name=".login" />
         <activity android:name=".signup" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

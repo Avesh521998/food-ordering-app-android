@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -23,6 +24,7 @@ public class login extends AppCompatActivity{
     Button btn ;
     EditText txtEmail;
     EditText txtPassWord;
+    TextView textforgot;
 
     FirebaseAuth mAuth;
     //FirebaseFirestore store;
@@ -33,12 +35,18 @@ public class login extends AppCompatActivity{
         setContentView(R.layout.activity_login);
         txtEmail = (EditText) findViewById(R.id.Email);
         txtPassWord = (EditText) findViewById(R.id.PassWord);
+        textforgot = (TextView) findViewById(R.id.txtviewforgot);
         btn = (Button) findViewById(R.id.btnSignIn);
+        textforgot.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(login.this,recoverpassword.class);
+                startActivity(i);
+            }
+        });
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 mAuth.signInWithEmailAndPassword(txtEmail.getText().toString(),txtPassWord.getText().toString())
                         .addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -46,8 +54,9 @@ public class login extends AppCompatActivity{
                                 if (task.isSuccessful()) {
 
                                     Toast.makeText(login.this, "success", Toast.LENGTH_SHORT).show();
-                                    Intent i = new Intent(login.this, Menupage.class);
+                                    Intent i = new Intent(login.this, navigation.class);
                                     startActivity(i);
+                                    finish();
                                     //String currentuser = mAuth.getCurrentUser().getUid();
 //                        Map<String, Object> user = new HashMap<>();
 //                        user.put("name", txtUserName.getText().toString());
@@ -64,7 +73,7 @@ public class login extends AppCompatActivity{
                                     //Intent i = new Intent(login.this, Menuactivity.class);
                                     //startActivity(i);
                                 }else{
-                                    Toast.makeText(login.this, "fail", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

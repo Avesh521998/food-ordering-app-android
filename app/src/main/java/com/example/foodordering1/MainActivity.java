@@ -28,7 +28,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button btnSignUp,btnSignIn;
     ProgressBar progressBar;
-
+    TextView textforgot;
     FirebaseAuth mauth;
 
     @Override
@@ -40,21 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
         btnSignUp = (Button) findViewById(R.id.btnSignUp);
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
-
         mauth = FirebaseAuth.getInstance();
-
-
-
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, login.class);
                 startActivity(i);
-
-
             }
         });
-
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
 
     }
 }
