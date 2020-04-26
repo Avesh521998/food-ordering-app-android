@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -26,6 +27,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
     Button btnSignUp,btnSignIn;
     ProgressBar progressBar;
     TextView textforgot;
@@ -55,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
     }
+
 }

@@ -42,11 +42,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/edittextstyle"
+            android:drawableLeft="@drawable/ic_email"
             android:ems="15"
-            android:hint="Email"
+            android:hint="  Email"
             android:inputType="textEmailAddress"
+            android:transitionName="smartherd_shared"
             android:singleLine="true" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -62,21 +64,28 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/edittextstyle"
                 android:ems="10"
-                android:hint="Password"
+                android:hint=" Password"
                 android:inputType="textPassword"
                 android:singleLine="true" />
         </com.google.android.material.textfield.TextInputLayout>
-
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remember Password"
+            android:textColor="@color/colorPrimary"
+            android:drawableTint="@color/colorPrimary"/>
         <TextView
             android:id="@+id/txtviewforgot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Recover password"
+            android:text="Recover password!"
             android:layout_below="@+id/androidbelow"
             android:textAlignment="center"
             android:textSize="15dp"
-            android:textColor="@color/fbutton_color_midnight_blue"
+            android:textColor="@color/colorPrimary"
             android:layout_marginBottom="10dp"/>
+
 
         <Button
             android:id="@+id/btnSignIn"

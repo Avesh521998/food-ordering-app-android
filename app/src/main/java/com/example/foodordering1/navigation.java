@@ -1,40 +1,28 @@
 package com.example.foodordering1;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Menu;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import  com.google.firebase.auth.FirebaseAuth;
-import  com.google.firebase.auth.FirebaseUser;
-import com.example.foodordering1.ui.home.HomeFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
+import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import com.google.firebase.auth.FirebaseAuth;
-public class navigation extends AppCompatActivity {
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.ui.AppBarConfiguration;
 
+import com.google.android.material.navigation.NavigationView;
+public class navigation extends AppCompatActivity {
+    SQLiteDatabase db;
     private AppBarConfiguration mAppBarConfiguration;
     private DrawerLayout mdrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView navigationView;
     TextView txtEmail;
-    FirebaseUser Email;
-    String uid;
+    //FirebaseUser Email;
+    String user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,27 +32,34 @@ public class navigation extends AppCompatActivity {
         navigationView.findViewById(R.id.nav_about);
         navigationView.findViewById(R.id.nav_gallery);
         navigationView.findViewById(R.id.nav_help);
-        txtEmail = (TextView)findViewById(R.id.navigatetextView);
-        Email = FirebaseAuth.getInstance().getCurrentUser();
-        uid = Email.getEmail();
-       navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_logout:
+                        db=openOrCreateDatabase("food", Context.MODE_PRIVATE, null);
+                        db.execSQL("DROP TABLE user;");
                         Intent i = new Intent(navigation.this, login.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(i);
                         Toast.makeText(navigation.this, " ☺ Thank you ☺ ", Toast.LENGTH_SHORT).show();
+                        finish();
+                        break;
                     case R.id.nav_about:
-                        Intent j = new Intent(navigation.this,Aboutus.class);
+                        Intent j = new Intent(navigation.this,pasta.class);
                         startActivity(j);
-
+                        break;
                     case R.id.nav_gallery:
-                        Intent k = new Intent(navigation.this,feedback.class);
+                        Intent k = new Intent(navigation.this,pasta.class);
                         startActivity(k);
+                        break;
                     case R.id.nav_help:
                         Intent l = new Intent(navigation.this,help.class);
                         startActivity(l);
+                        break;
                 }
                 return true;
             }

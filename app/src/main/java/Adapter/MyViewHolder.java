@@ -8,7 +8,8 @@ import com.example.foodordering1.R;
 
 class MyViewHolder extends RecyclerView.ViewHolder {
     TextView cart_item_name,Cart_item_price;
-    ImageView cart_item_image;
+    ImageView cart_item_image,mDeleteImage;
+
     public MyViewHolder(View itemView){
         super(itemView);
         cart_item_image = (ImageView)itemView.findViewById(R.id.pizzaone);

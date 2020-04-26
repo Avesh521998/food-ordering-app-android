@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.foodordering1.R;
 
 import java.util.List;
@@ -18,15 +20,17 @@ import Model.Item;
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     Context context;
     List<Item> itemList;
+    ImageView cart_item_image;
+    private ElegantNumberButton unbinder;
     public MyAdapter(Context context,List<Item> itemList)
     {
         this.context=context;
         this.itemList=itemList;
     }
-
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View itemView = LayoutInflater.from(context).inflate(R.layout.item_layout,parent,false);
 
         return new MyViewHolder(itemView);
@@ -36,11 +40,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Glide.with(context).load(itemList.get(position).getImage()).into(holder.cart_item_image);
         holder.cart_item_name.setText(itemList.get(position).getName());
-        holder.Cart_item_price.setText(itemList.get(position).getPrice());
+        holder.Cart_item_price.setText(new StringBuilder("").append(itemList.get(position).getPrice() + itemList.get(position).getPrice()));
+
     }
 
     @Override
     public int getItemCount() {
         return itemList.size();
     }
+
 }

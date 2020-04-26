@@ -17,5 +17,15 @@
     <color name="lightDarkcolor">#666f78</color>
     <color name="lightgreen">#008577</color>
     <color name="colorAssent">#D81B60</color>
-    <color name="colorlightblue">#06E1E1</color>
+
+    <color name="startcolor">#006797</color>
+    <color name="endcolor">#489855</color>
+    <color name="centercolor">#006797</color>
+    <color name="UserRow">#403EDA96</color>
+    <color name="textcolor">#273d52</color>
+    <color name="headerColor">#145795</color>
+    <color name="iconColor">#145798</color>
+
+
+
 </resources>
