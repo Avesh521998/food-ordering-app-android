@@ -29,4 +29,7 @@
     <string name="login_status_shared_preference">com.example.foodordering1_login_status_shared_preference</string>
     <string name="username">trueline</string>
     <string name="password">solution</string>
+    <string name="name">name</string>
+    <string name="price">price</string>
+    <string name="check">check Detatil</string>
 </resources>
