@@ -1,4 +1,4 @@
 package com.example.foodordering1;
 
-class CustomAdapter {
+public class myadapter {
 }
